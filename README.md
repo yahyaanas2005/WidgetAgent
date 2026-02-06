@@ -17,7 +17,7 @@ A production-ready multi-tenant headless AI agent widget with ERP capabilities, 
 - **Database**: Supabase (PostgreSQL with RLS)
 - **AI**: Vercel AI SDK with OpenAI GPT-4
 - **Voice**: Deepgram (STT) + ElevenLabs (TTS)
-- **Reports**: jsPDF and xlsx for PDF/Excel generation
+- **Reports**: jsPDF and exceljs for PDF/Excel generation
 - **Deployment**: Vercel
 
 ## Getting Started

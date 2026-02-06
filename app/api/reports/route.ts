@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { jsPDF } from 'jspdf';
-import * as XLSX from 'xlsx';
+import ExcelJS from 'exceljs';
 import { createClient } from '@/lib/supabase/server';
 
 export async function POST(req: Request) {
@@ -51,15 +51,48 @@ export async function POST(req: Request) {
       size: pdfBuffer.byteLength 
     });
   } else {
-    const ws = XLSX.utils.json_to_sheet(data || []);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, type);
-    const xlsxBuffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
+    // Generate Excel using ExcelJS (more secure than xlsx)
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet(type);
+    
+    if (data && data.length > 0) {
+      // Add headers
+      if (type === 'sales') {
+        worksheet.columns = [
+          { header: 'Transaction ID', key: 'id', width: 30 },
+          { header: 'Amount', key: 'total_amount', width: 15 },
+          { header: 'Status', key: 'status', width: 15 },
+          { header: 'Date', key: 'created_at', width: 20 }
+        ];
+      } else {
+        worksheet.columns = [
+          { header: 'SKU', key: 'sku', width: 15 },
+          { header: 'Name', key: 'name', width: 30 },
+          { header: 'Stock', key: 'stock_level', width: 10 },
+          { header: 'Price', key: 'unit_price', width: 12 }
+        ];
+      }
+      
+      // Add rows
+      data.forEach((item: any) => {
+        worksheet.addRow(item);
+      });
+      
+      // Style header row
+      worksheet.getRow(1).font = { bold: true };
+      worksheet.getRow(1).fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'FFE0E0E0' }
+      };
+    }
+    
+    const buffer = await workbook.xlsx.writeBuffer();
     
     // In production, upload to Supabase Storage
     return NextResponse.json({ 
       url: 'https://example.com/report.xlsx',
-      size: xlsxBuffer.byteLength 
+      size: buffer.byteLength 
     });
   }
 }

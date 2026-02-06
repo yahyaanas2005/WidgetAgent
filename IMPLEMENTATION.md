@@ -15,7 +15,7 @@ This document provides a comprehensive overview of the complete implementation o
   - @deepgram/sdk
   - lucide-react, tailwindcss
   - @radix-ui components
-  - recharts, jspdf, xlsx, zod
+  - recharts, jspdf, exceljs, zod
 - ✅ Project structure organized with proper directories
 
 ### 2. Database Schema & Multi-Tenancy ✓
@@ -77,7 +77,7 @@ This document provides a comprehensive overview of the complete implementation o
 
 ### 9. Report Generation API ✓
 - ✅ PDF generation with jsPDF
-- ✅ Excel generation with xlsx
+- ✅ Excel generation with exceljs
 - ✅ Sales and inventory report types
 - ✅ Ready for Supabase Storage integration
 
