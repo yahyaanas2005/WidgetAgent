@@ -2,6 +2,8 @@
 
 A production-ready multi-tenant headless AI agent widget with ERP capabilities, voice support, and quantum minimalist UI.
 
+> **🚀 New here? Start with [QUICKSTART.md](./QUICKSTART.md) for a 5-minute setup!**
+
 ## Features
 
 - 🏢 **Multi-Tenant Architecture**: Secure tenant isolation with Row Level Security (RLS)
