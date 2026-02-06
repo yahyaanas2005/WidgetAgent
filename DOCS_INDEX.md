@@ -44,21 +44,25 @@ Choose your path based on your experience level and goals:
 - RLS policy details
 
 ### 🌐 I Want to Test the Widget
-**→ Go to [examples/](./examples/)**
-- Widget demo HTML
-- Integration examples
-- Testing instructions
+**→ Go to [TESTING_URLS.md](./TESTING_URLS.md)**
+- Local testing URLs (http://localhost:3000)
+- Production testing URLs
+- API endpoint testing
+- Widget integration testing
+- Troubleshooting connection issues
 
 ## 📋 Documentation Hierarchy
 
 ```
 ├── README.md                    # Project overview and quick links
 ├── QUICKSTART.md                # 5-minute fast setup (start here!)
+├── TESTING_URLS.md              # All URLs for testing (local & production)
 ├── USAGE_GUIDE.md               # Complete setup and usage guide
 ├── SETUP_CHECKLIST.md           # Progress tracking checklist
 ├── IMPLEMENTATION.md            # Technical implementation details
 ├── SECURITY.md                  # Security practices and reporting
 ├── ISSUE_RESOLUTION.md          # Recent issue resolutions
+├── CHANGES_SUMMARY.md           # Documentation changes overview
 ├── examples/
 │   ├── README.md                # Examples documentation
 │   └── widget-demo.html         # Widget demo page
@@ -100,6 +104,12 @@ Choose your path based on your experience level and goals:
 
 **...deploy to production?**
 → [USAGE_GUIDE.md - Deployment](./USAGE_GUIDE.md#deployment-to-production)
+
+**...test the widget locally?**
+→ [TESTING_URLS.md](./TESTING_URLS.md) - Start server with `npm run dev`, then open `http://localhost:3000`
+
+**...find all testing URLs?**
+→ [TESTING_URLS.md](./TESTING_URLS.md) - Complete list of local and production URLs
 
 **...embed the widget on my website?**
 → [USAGE_GUIDE.md - Embedding](./USAGE_GUIDE.md#embedding-the-widget) or [examples/README.md](./examples/README.md)
@@ -160,6 +170,7 @@ Found an error or want to improve the docs?
 | 🔧 Learn architecture | [IMPLEMENTATION.md](./IMPLEMENTATION.md) |
 | 🛡️ Security info | [SECURITY.md](./SECURITY.md) |
 | 🌐 Test widget | [examples/](./examples/) |
+| 🌐 Test URLs | [TESTING_URLS.md](./TESTING_URLS.md) |
 | 🆘 Get help | [USAGE_GUIDE.md](./USAGE_GUIDE.md#troubleshooting) |
 
 ---

@@ -3,6 +3,8 @@
 A production-ready multi-tenant headless AI agent widget with ERP capabilities, voice support, and quantum minimalist UI.
 
 > **🚀 New here? Start with [QUICKSTART.md](./QUICKSTART.md) for a 5-minute setup!**
+> 
+> **🌐 Testing URLs? See [TESTING_URLS.md](./TESTING_URLS.md) - Local: `http://localhost:3000`**
 
 ## Features
 
